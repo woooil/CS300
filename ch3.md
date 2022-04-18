@@ -11,25 +11,25 @@
 3. Combine: Merge 2 sorted subarrs
 
 ```
-    function mergesort(a[1...n])
-    Input: An arr of numbers a[1...n]
-    Output: A sorted version of this array
+function mergesort(a[1...n])
+Input: An arr of numbers a[1...n]
+Output: A sorted version of this array
 
-    if n > 1 do
-      return merge(mergesort(a[1...floor(n/2)]), mergesort(a[floor(n/2) + 1...n]))
-    else do
-      return a
+if n > 1 do
+  return merge(mergesort(a[1...floor(n/2)]), mergesort(a[floor(n/2) + 1...n]))
+else do
+  return a
 ```
 ```
-    function merge(x[1...k], y[1...l])
-      if k = 0 do
-        return y[1...l]
-      if l = 0 do
-        return x[1...k]
-      if x[1] <= y[1] do
-        return x[1] + merge(x[2...k], y[1...l])
-      else do
-        return y[1] + merge(x[1...k], y[2...l])
+function merge(x[1...k], y[1...l])
+  if k = 0 do
+    return y[1...l]
+  if l = 0 do
+    return x[1...k]
+  if x[1] <= y[1] do
+    return x[1] + merge(x[2...k], y[1...l])
+  else do
+    return y[1] + merge(x[1...k], y[2...l])
 ```
 
 ### Analysis

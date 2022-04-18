@@ -2,14 +2,14 @@
 
 ## Insertion Sort
 ```
-    Insertion-Sort(A, n)
-      for j <- 2 to n do
-        key <- A[j]
-        i <- j - 1
-        while i > 0 and A[i] > key do
-          A[i + 1] <- A[i]
-          i <- i - 1
-        A[i + 1] <- key
+Insertion-Sort(A, n)
+  for j <- 2 to n do
+    key <- A[j]
+    i <- j - 1
+    while i > 0 and A[i] > key do
+      A[i + 1] <- A[i]
+      i <- i - 1
+    A[i + 1] <- key
 ```
 
 * `A[k]` for `k` $<$ `key` are sorted
@@ -88,12 +88,12 @@
 * Naive recursive algorithm
 
 ```
-    function fib1(n)
-      if n = 0 do
-        return 0
-      if n = 1 do
-        return 1
-      return fib1(n - 1) + fib1(n - 2)
+function fib1(n)
+  if n = 0 do
+    return 0
+  if n = 1 do
+    return 1
+  return fib1(n - 1) + fib1(n - 2)
 ```
         
   * Analysis \
@@ -111,15 +111,15 @@
 * Better algorithm
 
 ```
-    function fib2(n)
-      if n = 0 do
-        return 0
-      f[0...n]
-      f[0] <- 0
-      f[1] <- 1
-      for i <- 2 to n do
-        f[i] <- f[n - 1] + f[n - 2]
-      return f[n]
+function fib2(n)
+  if n = 0 do
+    return 0
+  f[0...n]
+  f[0] <- 0
+  f[1] <- 1
+  for i <- 2 to n do
+    f[i] <- f[n - 1] + f[n - 2]
+  return f[n]
 ```
   
   * Analysis
