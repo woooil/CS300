@@ -61,7 +61,7 @@ Rand-Select(A, p, q, i)
 
 ### Worst-Case Linear-Time Selection Algorithm
 ```
-Select(a[1..n], k):
+Select(a[1..n], k)
   if n <= 25 do                         
     use brute force
   else do
