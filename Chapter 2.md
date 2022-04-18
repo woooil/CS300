@@ -1,3 +1,8 @@
+---
+title: "Ch. 2 Introduction"
+use_math: true
+---
+
 # Ch. 2 Introduction
 
 ## Insertion Sort
