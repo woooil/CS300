@@ -76,6 +76,6 @@ Quicksort(A, 1, n)
   $ \
   $= \sum_{k = 0}^{n - 1} X_k (T(k) + T(n - k - 1) + \Theta(n))$
 * $E[T(n)] = E\left[ \sum_{k = 0}^{n - 1} X_k (T(k) + T(n - k - 1) + \Theta(n)) \right]$
-  * $(2/n)\sum_{k=2}^{n-1} E[T(k)] + \Theta(n)$
+  * $= (2/n)\sum_{k=2}^{n-1} E[T(k)] + \Theta(n)$
 * $E[T(n)] \leq a n \lg(n)$ for sufficiently large $a > 0$
   * Can be proven by Substitution method
