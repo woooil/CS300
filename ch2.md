@@ -1,11 +1,7 @@
----
-title: "Ch. 2 Introduction"
-use_math: true
----
-
 # Ch. 2 Introduction
 
 ## Insertion Sort
+```
     Insertion-Sort(A, n)
       for j <- 2 to n do
         key <- A[j]
@@ -14,6 +10,7 @@ use_math: true
           A[i + 1] <- A[i]
           i <- i - 1
         A[i + 1] <- key
+```
 
 * `A[k]` for `k` $<$ `key` are sorted
 * Insert `A[key]` to the right place in `A[k]` for `k` $<$ `key`
@@ -65,7 +62,7 @@ use_math: true
 ### $\Theta$-Notation
 * $\Theta(g(n))$ $\equiv$ \
   $\{~ f(n) ~|~ \exist c_1,~ c_2,~ n_0 ~\text{s.t.}~
-   0 \leq c_1 g(n)\leq f(n) \leq c_2 g(n) ~\text{for all}~ n \geq n_0 ~\}$
+   0 \leq c_1 g(n)\leq f(n) \leq c_2 g(n) ~\text{for}~ \forall n \geq n_0 ~\}$
   * $g(n)$: Asymptotic tight bound for $f(n)$
 
 ## Insertion Sort Analysis
@@ -90,12 +87,15 @@ use_math: true
   
 * Naive recursive algorithm
 
-      function fib1(n)
-        if n = 0 do
-          return 0
-        if n = 1 do
-          return 1
-        return fib1(n - 1) + fib1(n - 2)
+```
+    function fib1(n)
+      if n = 0 do
+        return 0
+      if n = 1 do
+        return 1
+      return fib1(n - 1) + fib1(n - 2)
+```
+        
   * Analysis \
     $
     T(n)
@@ -110,15 +110,17 @@ use_math: true
 
 * Better algorithm
 
-      function fib2(n)
-        if n = 0 do
-          return 0
-        f[0...n]
-        f[0] <- 0
-        f[1] <- 1
-        for i <- 2 to n do
-          f[i] <- f[n - 1] + f[n - 2]
-        return f[n]
+```
+    function fib2(n)
+      if n = 0 do
+        return 0
+      f[0...n]
+      f[0] <- 0
+      f[1] <- 1
+      for i <- 2 to n do
+        f[i] <- f[n - 1] + f[n - 2]
+      return f[n]
+```
   
   * Analysis
     * `f[n - 1] + f[n - 2]` doesn't take a constant time as they are not small
@@ -130,7 +132,7 @@ use_math: true
 ## $\Theta$-Notation
 * $\Theta(g(n))$ $\equiv$ \
   $\{~ f(n) ~|~ \exist c_1,~ c_2,~ n_0 > 0 ~\text{s.t.}~ 
-  0 \leq c_1 g(n)\leq f(n) \leq c_2 g(n) ~\text{for all}~ n \geq n_0 ~\}$
+  0 \leq c_1 g(n)\leq f(n) \leq c_2 g(n) ~\text{for}~ \forall n \geq n_0 ~\}$
   * $g(n)$: Asymptotic tight bound for $f(n)$
 * $\lim_{n \rightarrow \infin} f(n)/g(n) = c, ~c \in \R^+$ $\rightarrow$ $f \in \Theta(g)$
 * $n^2 / 2 - 2n = \Theta(n^2)$
@@ -138,7 +140,7 @@ use_math: true
 ## O-Notation
 * $O(g(n))$ $\equiv$ \
   $\{~ f(n) ~|~ \exist c ,~ n_0 > 0 ~\text{s.t.}~
-  0 \leq f(n) \leq c g(n) ~\text{for all}~ n \geq n_0 ~\}$
+  0 \leq f(n) \leq c g(n) ~\text{for}~ \forall n \geq n_0 ~\}$
   * $g(n)$: Asymptotic upper bound for $f(n)$
 * $\lim_{n \rightarrow \infin} f(n)/g(n) = c, ~c \in \R^*$ $\rightarrow$ $f \in O(g)$ 
   * $\R^*$: Set of non-negative real numbers
@@ -147,7 +149,7 @@ use_math: true
 ## $\Omega$-Notation
 * $O(g(n))$ $\equiv$ \
   $\{~ f(n) ~|~ \exist c ,~ n_0 > 0 ~\text{s.t.}~
-  0 \leq c g(n) \leq f(n) ~\text{for all}~ n \geq n_0 ~\}$
+  0 \leq c g(n) \leq f(n) ~\text{for}~ \forall n \geq n_0 ~\}$
   * $g(n)$: Asymptotic lower bound for $f(n)$
 * $
   \lim_{n \rightarrow \infin} f(n)/g(n) = 
@@ -163,7 +165,7 @@ use_math: true
 ## o-Notation
 * $o(g(n))$ $\equiv$ \
   $\{~ f(n) ~|~ \forall c > 0,~ \exist n_0 > 0 ~\text{s.t.}~
-  0 \leq f(n) < c g(n) ~\text{for all}~ n \geq n_0 ~\}$
+  0 \leq f(n) < c g(n) ~\text{for}~ \forall n \geq n_0 ~\}$
   * $f(n)$ is asumptotically smaller than $g(n)$
 * $\lim_{n \rightarrow \infin} f(n)/g(n) = 0$ $\rightarrow$ $f \in o(g)$ 
 * $10^{10} n^2 + 10^5 n + 10^9 = o(n^3)$
@@ -171,7 +173,7 @@ use_math: true
 ## $\omega$-Notation
 * $o(g(n))$ $\equiv$ \
   $\{~ f(n) ~|~ \forall c > 0,~ \exist n_0 > 0 ~\text{s.t.}~
-  0 \leq c g(n) < f(n) ~\text{for all}~ n \geq n_0 ~\}$
+  0 \leq c g(n) < f(n) ~\text{for}~ \forall n \geq n_0 ~\}$
   * $f(n)$ is asumptotically larger than $g(n)$
 * $\lim_{n \rightarrow \infin} f(n)/g(n) = \infin$ $\rightarrow$ $f \in \omega(g)$ 
   * $\R^*$: Set of non-negative real numbers
